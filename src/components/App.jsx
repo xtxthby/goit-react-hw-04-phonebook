@@ -22,17 +22,17 @@ const notifyOptions = {
   progress: undefined,
   theme: 'colored',
 };
-// const toastifyOptions = {
-//   position: 'bottom-left',
-//   autoClose: 5000,
-//   hideProgressBar: false,
-//   closeOnClick: true,
-//   pauseOnHover: true,
-//   draggable: true,
-//   progress: undefined,
-//   theme: 'colored',
-//   toastId: 'custom-id-yes',
-// };
+const toastifyOptions = {
+  position: 'bottom-left',
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'colored',
+  toastId: 'custom-id-yes',
+};
 
 export default function App () {
   const [contacts, setContacts] = useLocalStorage ('contacts', initialContacts)
@@ -81,7 +81,7 @@ export default function App () {
     );
 
     if (normalizedFilter && !filteredContacts.length) {
-      toast.warn(`No contacts matching your request`, notifyOptions);
+      toast.warn(`No contacts matching your request`, toastifyOptions);
     }
 
     return filteredContacts;
